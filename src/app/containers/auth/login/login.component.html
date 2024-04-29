@@ -1,18 +1,18 @@
 <section class="container-fluid">
     <div class="container">
-        <form class="form-container">
+        <form class="form-container" [formGroup]="myForm">
             <div class="form-header">
                 <img src="../../../../assets/auth/perfil.png">
             </div>
             <div class="form-group">
                 <label for="cc">Identificación: </label>
-                <input type="text" class="form-control" placeholder="C.C">
+                <input type="text" id="cc" class="form-control" placeholder="C.C" formControlName="username">
             </div>
             <div class="form-group">
-                <label for="cc">Contraseña: </label>
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <label for="pw">Contraseña: </label>
+                <input type="password" id="pw" class="form-control" placeholder="Contraseña" formControlName="password">
             </div>
-            <button class="btn btn-primary">INGRESAR</button>
+            <button class="btn btn-primary" (click)="login()">INGRESAR</button>
         </form>
     </div>
 </section>

@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f5f8;
+    color: #000000;
+}
+
+.logo>a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo>a>img:nth-child(3) {
+    display: none;
+}
+
+.navbar img {
+    height: 30px !important;
+}
+
+.vinculos, .acciones-perfil {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+}
+
+.vinculos a {
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    padding: 5px 10px;
+    color: #000000;
+    font-weight: 700;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.vinculos ol:hover {
+    transform: scale(1.06);
+    color: #E9C010;
+}
+
+.navbar .nav-link.active {
+    color: #E9C010;
+}
+
+
+.nav-item {
+    text-align: center;
+}
+
+.nav-item>img {
+    width: 20px;
+    height: auto !important;
+    display: none;
+}
+
+.acciones-perfil {
+    display: flex;
+    gap: 15px;
+}
+
+.acciones-perfil p {
+    width: 150px;
+    font-size: 12px;
+    text-align: right;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.acciones-perfil button {
+    background: none;
+    border: none; 
+    transition: all 0.3s ease-in-out;
+}
+
+.acciones-perfil button:hover {
+    transform: scale(1.03);
+    border-bottom: #E9C010 1px solid;
+}

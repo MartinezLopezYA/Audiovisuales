@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    width: 100vw;
+    height: 100vh;
+    background-color: #b0b0b1;
+    // background-color: #f2f5f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgba(128, 128, 128, 0.202) 3px 3px 10px, rgba(128, 128, 128, 0.202) -3px -3px 10px;
+}

@@ -8,7 +8,9 @@ import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { DocenteComponent } from './containers/dashboard/docente/docente.component';
 import { ImplementosComponent } from './containers/dashboard/implementos/implementos.component';
 import { PrestamosComponent } from './containers/dashboard/prestamos/prestamos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarDashboardComponent } from './containers/utils/navbar-dashboard/navbar-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,15 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     DocenteComponent,
     ImplementosComponent,
-    PrestamosComponent
+    PrestamosComponent,
+    NavbarDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
