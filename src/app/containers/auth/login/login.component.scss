@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.container-fluid {
+    width: 100vw;
+    height: 100vb;
+    background-image: url(../../../../assets/auth/uniminuto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    padding: 10px;
+    background-color: #ffffffb5;
+    border-radius: 10px;
+    box-shadow: 10px 10px 84px 0px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.btn {
+    padding: 10px;
+}
