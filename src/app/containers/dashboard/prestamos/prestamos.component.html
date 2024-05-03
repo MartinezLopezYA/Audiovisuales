@@ -1,1 +1,46 @@
-<p>prestamos works!</p>
+
+<section class="container">
+    <router-outlet></router-outlet>
+    <div class="data">
+        <div class="data-container" >
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Fecha</th>
+                    <th>Salón</th>
+                    <th>Estado</th>
+                    <th>Observación</th>
+                    <th>F Creación</th>
+                    <th>F Actuali</th>
+                    <th>Id Encargado</th>
+                    <th>Código</th>
+                    <th>Id Docente</th>
+                </tr>
+                <tr *ngFor="let prestamo of informacion">
+                    <td>{{ prestamo.idPrestamo }}</td>
+                    <td>{{ prestamo.fecha.substring(0,10) }}</td>
+                    <td>{{ prestamo.salon }}</td>
+                    <td>{{ prestamo.estado }}</td>
+                    <td>{{ prestamo.observacion }}</td>
+                    <td>{{ prestamo.createdAt.substring(0,10) }}</td>
+                    <td>{{ prestamo.updatedAt.substring(0,10) }}</td>
+                    <td>{{ prestamo.cedulaEncargado }}</td>
+                    <td>{{ prestamo.codigo }}</td>
+                    <td>{{ prestamo.cedulaDocente }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="data-container">
+            <div class="data-acciones">
+                <div class="data-acciones-paginacion">
+                    <button class="btn"><img style="width: 20px; rotate: 180deg;" src="../../../../assets/siguiente.png" alt=""></button>
+                    <button class="btn"><img style="width: 20px;" src="../../../../assets/siguiente.png" alt=""></button>
+                </div>
+                <div class="data-acciones-crud">
+                    <button class="btn" routerLink="/dashboard/prestamos/registrar-prestamo">GENERAR</button>
+                    <button class="btn">ELIMINAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

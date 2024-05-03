@@ -11,6 +11,8 @@ import { PrestamosComponent } from './containers/dashboard/prestamos/prestamos.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarDashboardComponent } from './containers/utils/navbar-dashboard/navbar-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/registrar-prestamo/registrar-prestamo.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { NavbarDashboardComponent } from './containers/utils/navbar-dashboard/na
     DocenteComponent,
     ImplementosComponent,
     PrestamosComponent,
-    NavbarDashboardComponent
+    NavbarDashboardComponent,
+    RegistrarPrestamoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

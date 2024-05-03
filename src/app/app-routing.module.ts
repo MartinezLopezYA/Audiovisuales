@@ -5,6 +5,7 @@ import { DocenteComponent } from './containers/dashboard/docente/docente.compone
 import { ImplementosComponent } from './containers/dashboard/implementos/implementos.component';
 import { PrestamosComponent } from './containers/dashboard/prestamos/prestamos.component';
 import { LoginComponent } from './containers/auth/login/login.component';
+import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/registrar-prestamo/registrar-prestamo.component';
 
 const routes: Routes = [
 
@@ -12,9 +13,12 @@ const routes: Routes = [
 
   { path: 'dashboard', component: DashboardComponent, 
     children: [
+      { path: 'prestamos', component: PrestamosComponent, 
+      children: [
+        { path: 'registrar-prestamo', component: RegistrarPrestamoComponent },
+      ] },
       { path: 'docente', component: DocenteComponent },
-      { path: 'implementos', component: ImplementosComponent },
-      { path: 'prestamos', component: PrestamosComponent }
+      { path: 'implementos', component: ImplementosComponent }
     ]},
 
   // { path: '', redirectTo: '/dashboard/docente', pathMatch: 'full'},

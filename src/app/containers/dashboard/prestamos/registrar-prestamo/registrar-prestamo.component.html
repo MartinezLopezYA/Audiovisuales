@@ -1,0 +1,53 @@
+<section class="container-fluid">
+    <h3>REGISTRAR PRESTAMO</h3>
+    <div class="formulario">
+        <form [formGroup]="myForm" class="form-container">
+            <div class="inputs">
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="fecha">Fecha Prestamo:</label>
+                        <input type="text" id="fecha" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="salon">Salón:</label>
+                        <input type="text" id="salon" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="estado">Estado:</label>
+                        <select name="estado" id="estado" class="form-control form-control-sm">
+                            <option selected>--Selecciona una opción--</option>
+                            <option value="1">PRESTADO</option>
+                            <option value="2">NO PRESTADO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="obs">Observación:</label>
+                        <input type="text" id="obs" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cen">Cedula Encargado:</label>
+                        <input type="text" id="cen" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="codigo">Codigo:</label>
+                        <input type="text" id="codigo" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="cdo">Cedula Docente:</label>
+                        <input type="text" id="cdo" class="form-control form-control-sm">
+                    </div>
+                </div>
+            </div>
+            <div class="acciones">
+                <div class="form-container-group col-12">
+                    <button class="btn col-3">REGISTRAR</button>
+                    <button class="btn col-3" (click)="volver()">CANCELAR Y VOLVER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
