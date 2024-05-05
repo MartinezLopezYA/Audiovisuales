@@ -10,9 +10,13 @@ import { DocenteService } from 'src/app/services/dashboard/docente.service';
   styleUrls: ['./editar-docente.component.scss']
 })
 export class EditarDocenteComponent implements OnInit{
+  
   myForm!: FormGroup;
-
   newDocente!: NewDocente;
+
+  alertaVisible: boolean = false;
+  mensaje: string = '';
+  tipo: string = '';
 
   constructor(
     private docente: DocenteService,
@@ -33,6 +37,18 @@ export class EditarDocenteComponent implements OnInit{
     })
   }
 
+  mostrarAlerta(mensaje: string, tipo: string, callback: Function) {
+    this.mensaje = mensaje;
+    this.tipo = tipo;
+    this.alertaVisible = true;
+    setTimeout(() => {
+      this.alertaVisible = false;
+      if (callback) {
+        callback();
+      }
+    }, 2000);
+  }
+
   updateDocente() {
     if (this.myForm.invalid) {
       return;
@@ -42,18 +58,22 @@ export class EditarDocenteComponent implements OnInit{
 
     this.docente.updateDocente(data).subscribe(
       res => {
-        console.log(res);
-        console.log(data);
-        this.route.navigate(['/dashboard/docente']);
+        this.mostrarAlerta('Docente Actualizado Con Éxito', 'success', () => {
+          this.route.navigate(['/dashboard/docente']);
+        })
       },
       error => {
-        console.log(error);
+        this.mostrarAlerta('No Fue Posible Actualizar El Docente', 'error', () => {
+          this.route.navigate(['/dashboard/docente/editar-doente']);
+        })
       }
     );
   }
 
   volver() {
-    this.route.navigate(['/dashboard/docente'])
+    this.mostrarAlerta('Solicitud Cancelada', 'info', () => {
+      this.route.navigate(['/dashboard/docente']);
+    })
   }
 
 }

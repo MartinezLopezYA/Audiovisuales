@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/registrar-prestamo/registrar-prestamo.component';
 import { RegistrarDocenteComponent } from './containers/dashboard/docente/registrar-docente/registrar-docente.component';
 import { EditarDocenteComponent } from './containers/dashboard/docente/editar-docente/editar-docente.component';
+import { AlertasComponent } from './containers/utils/alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditarDocenteComponent } from './containers/dashboard/docente/editar-do
     NavbarDashboardComponent,
     RegistrarPrestamoComponent,
     RegistrarDocenteComponent,
-    EditarDocenteComponent
+    EditarDocenteComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,10 @@ export class RegistrarDocenteComponent implements OnInit{
 
   newDocente!: NewDocente;
 
+  alertaVisible: boolean = false;
+  mensaje: string = '';
+  tipo: string = '';
+
   constructor(
     private docente: DocenteService,
     private form: FormBuilder,
@@ -34,6 +38,18 @@ export class RegistrarDocenteComponent implements OnInit{
     })
   }
 
+  mostrarAlerta(mensaje: string, tipo: string, callback: Function) {
+    this.mensaje = mensaje;
+    this.tipo = tipo;
+    this.alertaVisible = true;
+    setTimeout(() => {
+      this.alertaVisible = false;
+      if (callback) {
+        callback();
+      }
+    }, 2000);
+  }
+
   saveDocente() {
     if (this.myForm.invalid) {
       return;
@@ -43,8 +59,9 @@ export class RegistrarDocenteComponent implements OnInit{
 
     this.docente.saveDocente(data).subscribe(
       res => {
-        console.log(res);
-        this.route.navigate(['/dashboard/docente'])
+        this.mostrarAlerta('Docente Agregado Con Éxito', 'success', () => {
+          this.route.navigate(['/dashboard/docente']);
+        })
       },
       error => {
         console.log(error);
@@ -53,7 +70,9 @@ export class RegistrarDocenteComponent implements OnInit{
   }
 
   volver() {
-    this.route.navigate(['/dashboard/docente'])
+    this.mostrarAlerta('Solicitud Cancelada', 'info', () => {
+      this.route.navigate(['/dashboard/docente']);
+    })
   }
 
 }

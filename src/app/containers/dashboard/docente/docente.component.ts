@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Docente, NewDocente, PageDocente } from 'src/app/interfaces/dashboard/docente';
 import { DocenteService } from 'src/app/services/dashboard/docente.service';
 
@@ -18,8 +19,13 @@ export class DocenteComponent implements OnInit{
 
   docenteSeleccionado: Docente | null = null;
 
+  alertaVisible: boolean = false;
+  mensaje: string = '';
+  tipo: string = '';
+
   constructor(
     private docente: DocenteService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,22 +46,37 @@ export class DocenteComponent implements OnInit{
     }
   }
 
+  mostrarAlerta(mensaje: string, tipo: string, callback: Function) {
+    this.mensaje = mensaje;
+    this.tipo = tipo;
+    this.alertaVisible = true;
+    setTimeout(() => {
+      this.alertaVisible = false;
+      if (callback) {
+        callback();
+      }
+    }, 2000);
+  }
+
   getAllDocente() {
     this.docente.getDocentes(this.currentPage, 10).subscribe(
       data => {
         this.informacion = data;
-        console.log(this.informacion);
       }
     );
   }
 
   deleteDocente() {
     if (this.docenteSeleccionado == null) {
-      alert('Seleccione un docente');
+      this.mostrarAlerta('Debe Seleccionar Un Docente', 'error', () => {
+        this.route.navigate(['/dashboard/docente']);
+      })
     } else {
       this.docente.deleteDocente(this.docenteSeleccionado.cedulaDocente).subscribe(
         () => {
-          console.log('Usuario Eliminado');
+          this.mostrarAlerta('Docente Eliminado Con Éxito', 'success', () => {
+            this.route.navigate(['/dashboard/docente']);
+          })
           this.getAllDocente();
         }
       );

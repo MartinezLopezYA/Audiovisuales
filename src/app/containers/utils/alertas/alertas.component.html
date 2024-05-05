@@ -1,0 +1,5 @@
+<div class="alert" [ngClass]="{'alert-success': tipo === 'success', 'alert-danger': tipo === 'error', 'alert-info': tipo === 'info'}">
+    <img [src]="obtenerImagen(tipo)" alt="Imagen de alerta">
+    <br>
+    <span>{{ mensaje }}</span>
+</div>
