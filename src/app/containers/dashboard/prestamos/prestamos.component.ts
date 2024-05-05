@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PrestamosService } from 'src/app/services/prestamos/prestamos.service';
+import { PrestamosService } from 'src/app/services/dashboard/prestamos.service';
 
 @Component({
   selector: 'app-prestamos',

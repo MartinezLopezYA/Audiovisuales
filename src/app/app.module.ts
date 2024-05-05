@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarDashboardComponent } from './containers/utils/navbar-dashboard/navbar-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/registrar-prestamo/registrar-prestamo.component';
+import { RegistrarDocenteComponent } from './containers/dashboard/docente/registrar-docente/registrar-docente.component';
+import { EditarDocenteComponent } from './containers/dashboard/docente/editar-docente/editar-docente.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/reg
     ImplementosComponent,
     PrestamosComponent,
     NavbarDashboardComponent,
-    RegistrarPrestamoComponent
+    RegistrarPrestamoComponent,
+    RegistrarDocenteComponent,
+    EditarDocenteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,45 @@
+<section class="container-fluid">
+    <h3>ACTUALIZAR DOCENTE</h3>
+    <div class="formulario">
+        <form [formGroup]="myForm" class="form-container">
+            <div class="inputs">
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="cc">Cedula:</label>
+                        <input formControlName="cedulaDocente" type="text" id="cc" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="nombre">Nombre:</label>
+                        <input formControlName="nombre" type="text" id="nombre" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="facu">Facultad:</label>
+                        <select formControlName="facultad" name="facu" id="facu" class="form-control form-control-sm">
+                            <option selected>--Selecciona una opción--</option>
+                            <option value="ISUM">ISUM</option>
+                            <option value="IAUM">IAUM</option>
+                            <option value="CSPUM">CSPUM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="clase">Clase:</label>
+                        <select formControlName="clase" name="clase" id="clase" class="form-control form-control-sm">
+                            <option selected>--Selecciona una opción--</option>
+                            <option value="Programación">Programación</option>
+                            <option value="BD">BD</option>
+                            <option value="Redes">Redes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="acciones">
+                <div class="form-container-group col-12">
+                    <button type="button" class="btn col-3" (click)="updateDocente()">EDITAR</button>
+                    <button type="button" class="btn col-3" (click)="volver()">CANCELAR Y VOLVER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
