@@ -22,7 +22,8 @@ export class EditarDocenteComponent implements OnInit{
   constructor(
     private docente: DocenteService,
     private form: FormBuilder,
-    private route: Router
+    private route: Router,
+    private docen: DocenteComponent
   ) {}
 
   ngOnInit(): void {
@@ -31,10 +32,10 @@ export class EditarDocenteComponent implements OnInit{
 
   initForm() {
     this.myForm = this.form.group({
-      cedulaDocente: ['', Validators.required],
-      nombre: ['', Validators.required],
-      facultad: ['', Validators.required],
-      clase: ['', Validators.required],
+      cedulaDocente: [this.docen.docenteSeleccionado?.cedulaDocente.toString(), Validators.required],
+      nombre: [this.docen.docenteSeleccionado?.nombre, Validators.required],
+      facultad: [this.docen.docenteSeleccionado?.facultad, Validators.required],
+      clase: [this.docen.docenteSeleccionado?.clase, Validators.required],
     })
   }
 
@@ -61,6 +62,7 @@ export class EditarDocenteComponent implements OnInit{
       res => {
         this.mostrarAlerta('Docente Actualizado Con Éxito', 'success', () => {
           this.route.navigate(['/dashboard/docente']);
+          this.docen.getAllDocente();
         })
       },
       error => {

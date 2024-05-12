@@ -62,6 +62,7 @@ export class DocenteComponent implements OnInit{
     this.docente.getDocentes(this.currentPage, 10).subscribe(
       data => {
         this.informacion = data;
+        
       }
     );
   }
