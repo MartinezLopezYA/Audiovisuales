@@ -22,7 +22,7 @@ export class PrestamosService {
         'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
       }
     };
-    return this.http.get<any>(this.url + '/prestamo?page=1&size=10&search=ninguna', httpOptions);
+    return this.http.get<any>(this.url + '/prestamo?page=1&size=10', httpOptions);
   }
 
   savePrestamo(prestamo: Prestamos): Observable<Prestamos> {

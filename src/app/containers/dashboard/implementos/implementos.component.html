@@ -1,1 +1,38 @@
-<p>implementos works!</p>
+<app-alertas *ngIf="alertaVisible" [mensaje]="mensaje" [tipo]="tipo"></app-alertas>
+
+<section class="container">
+    <router-outlet></router-outlet>
+    <div class="data">
+        <div class="data-container" *ngIf="informacion">
+            <table>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Implemento</th>
+                    <th>Caracteristicas</th>
+                    <th>F Creación</th>
+                    <th>F Actualización</th>
+                </tr>
+                <tr *ngFor="let implemento of informacion.dataResult" [class.selected-row]="implemento === implementoSeleccionado"  (click)="seleccionarImplemento(implemento)">
+                    <td>{{ implemento.codigo }}</td>
+                    <td>{{ implemento.implemento }}</td>
+                    <td>{{ implemento.caracteristicas }}</td>
+                    <td>{{ implemento.createdAt.substring(0,10) }}</td>
+                    <td>{{ implemento.updatedAt.substring(0,10) }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="data-container">
+            <div class="data-acciones">
+                <div class="data-acciones-paginacion">
+                    <button *ngIf="informacion && informacion.currentPage !== 1" (click)="prevPage()" class="btn"><img style="width: 20px; rotate: 180deg;" src="../../../../assets/siguiente.png" alt=""></button>
+                    <button *ngIf="informacion && informacion.totalPages !== 1" (click)="nextPage()" class="btn"><img style="width: 20px;" src="../../../../assets/siguiente.png" alt=""></button>
+                </div>
+                <div class="data-acciones-crud">
+                    <button class="btn" routerLink="/dashboard/implementos/registrar-implemento">AGREGAR</button>
+                    <button class="btn" routerLink="/dashboard/implementos/editar-implemento">EDITAR</button>
+                    <button class="btn" (click)="deleteImplemento()">ELIMINAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

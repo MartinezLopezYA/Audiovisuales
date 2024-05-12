@@ -21,7 +21,7 @@ export class DocenteService {
         'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
       }
     };
-    return this.http.get<PageDocente>(this.url + `/docente?page=${page}&size=${size}&search=pr`, httpOptions);
+    return this.http.get<PageDocente>(this.url + `/docente?page=${page}&size=${size}`, httpOptions);
   }
 
   saveDocente(docente: NewDocente): Observable<NewDocente> {

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NewDocente } from 'src/app/interfaces/dashboard/docente';
+import { Docente, NewDocente } from 'src/app/interfaces/dashboard/docente';
 import { DocenteService } from 'src/app/services/dashboard/docente.service';
+import { DocenteComponent } from '../docente.component';
 
 @Component({
   selector: 'app-editar-docente',

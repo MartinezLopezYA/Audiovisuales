@@ -1,0 +1,33 @@
+<app-alertas *ngIf="alertaVisible" [mensaje]="mensaje" [tipo]="tipo"></app-alertas>
+
+<section class="container-fluid">
+    <h3>ACTUALIZAR DOCENTE</h3>
+    <div class="formulario">
+        <form [formGroup]="myForm" class="form-container">
+            <div class="inputs">
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="cc">Código:</label>
+                        <input formControlName="codigo" type="text" id="codigo" class="form-control form-control-sm">
+                    </div>
+                </div>
+                <div class="form-container-group">
+                    <div class="form-group">
+                        <label class="form-label" for="nombre">Implemento:</label>
+                        <input formControlName="implemento" type="text" id="implemento" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="nombre">Caracteristicas:</label>
+                        <input formControlName="caracteristicas" type="text" id="caracteristicas" class="form-control form-control-sm">
+                    </div>
+                </div>
+            </div>
+            <div class="acciones">
+                <div class="form-container-group col-12">
+                    <button type="button" class="btn col-3" (click)="updateImplemento()">EDITAR</button>
+                    <button type="button" class="btn col-3" (click)="volver()">CANCELAR Y VOLVER</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

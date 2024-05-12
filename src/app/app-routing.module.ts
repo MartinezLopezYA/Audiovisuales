@@ -8,6 +8,8 @@ import { LoginComponent } from './containers/auth/login/login.component';
 import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/registrar-prestamo/registrar-prestamo.component';
 import { RegistrarDocenteComponent } from './containers/dashboard/docente/registrar-docente/registrar-docente.component';
 import { EditarDocenteComponent } from './containers/dashboard/docente/editar-docente/editar-docente.component';
+import { RegistrarImplementoComponent } from './containers/dashboard/implementos/registrar-implemento/registrar-implemento.component';
+import { EditarImplementoComponent } from './containers/dashboard/implementos/editar-implemento/editar-implemento.component';
 
 const routes: Routes = [
 
@@ -25,7 +27,12 @@ const routes: Routes = [
           { path: 'editar-docente', component: EditarDocenteComponent },
         ]
       },
-      { path: 'implementos', component: ImplementosComponent }
+      { path: 'implementos', component: ImplementosComponent,
+        children: [
+          { path: 'registrar-implemento', component: RegistrarImplementoComponent},
+          { path: 'editar-implemento', component: EditarImplementoComponent },
+        ]
+       }
     ]},
 
   // { path: '', redirectTo: '/dashboard/docente', pathMatch: 'full'},

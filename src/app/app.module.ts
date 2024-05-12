@@ -16,6 +16,8 @@ import { RegistrarPrestamoComponent } from './containers/dashboard/prestamos/reg
 import { RegistrarDocenteComponent } from './containers/dashboard/docente/registrar-docente/registrar-docente.component';
 import { EditarDocenteComponent } from './containers/dashboard/docente/editar-docente/editar-docente.component';
 import { AlertasComponent } from './containers/utils/alertas/alertas.component';
+import { RegistrarImplementoComponent } from './containers/dashboard/implementos/registrar-implemento/registrar-implemento.component';
+import { EditarImplementoComponent } from './containers/dashboard/implementos/editar-implemento/editar-implemento.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AlertasComponent } from './containers/utils/alertas/alertas.component';
     RegistrarPrestamoComponent,
     RegistrarDocenteComponent,
     EditarDocenteComponent,
-    AlertasComponent
+    AlertasComponent,
+    RegistrarImplementoComponent,
+    EditarImplementoComponent,
   ],
   imports: [
     BrowserModule,
