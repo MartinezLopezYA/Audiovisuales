@@ -1,8 +1,9 @@
+<app-alertas *ngIf="alertaVisible" [mensaje]="mensaje" [tipo]="tipo"></app-alertas>
 
 <section class="container">
     <router-outlet></router-outlet>
     <div class="data">
-        <div class="data-container" >
+        <div class="data-container" *ngIf="informacion">
             <table>
                 <tr>
                     <th>id</th>
@@ -16,7 +17,7 @@
                     <th>Código</th>
                     <th>Id Docente</th>
                 </tr>
-                <tr *ngFor="let prestamo of informacion">
+                <tr *ngFor="let prestamo of informacion" [class.selected-row]="prestamo === prestamoSeleccionado"  (click)="seleccionarPrestamo(prestamo)">
                     <td>{{ prestamo.idPrestamo }}</td>
                     <td>{{ prestamo.fecha.substring(0,10) }}</td>
                     <td>{{ prestamo.salon }}</td>
@@ -33,12 +34,13 @@
         <div class="data-container">
             <div class="data-acciones">
                 <div class="data-acciones-paginacion">
-                    <button class="btn"><img style="width: 20px; rotate: 180deg;" src="../../../../assets/siguiente.png" alt=""></button>
-                    <button class="btn"><img style="width: 20px;" src="../../../../assets/siguiente.png" alt=""></button>
+                    <button *ngIf="informacion && informacion.currentPage !== 1" class="btn"><img style="width: 20px; rotate: 180deg;" src="../../../../assets/siguiente.png" alt=""></button>
+                    <button *ngIf="informacion && informacion.totalPages !== 1" class="btn"><img style="width: 20px;" src="../../../../assets/siguiente.png" alt=""></button>
                 </div>
                 <div class="data-acciones-crud">
                     <button class="btn" routerLink="/dashboard/prestamos/registrar-prestamo">GENERAR</button>
-                    <button class="btn">ELIMINAR</button>
+                    <button class="btn" routerLink="/dashboard/prestamos/editar-prestamo">EDITAR</button>
+                    <button class="btn" (click)="deletePrestamo()">ELIMINAR</button>
                 </div>
             </div>
         </div>

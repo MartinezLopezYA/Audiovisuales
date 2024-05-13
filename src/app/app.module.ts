@@ -18,6 +18,7 @@ import { EditarDocenteComponent } from './containers/dashboard/docente/editar-do
 import { AlertasComponent } from './containers/utils/alertas/alertas.component';
 import { RegistrarImplementoComponent } from './containers/dashboard/implementos/registrar-implemento/registrar-implemento.component';
 import { EditarImplementoComponent } from './containers/dashboard/implementos/editar-implemento/editar-implemento.component';
+import { EditarPrestamoComponent } from './containers/dashboard/prestamos/editar-prestamo/editar-prestamo.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EditarImplementoComponent } from './containers/dashboard/implementos/ed
     AlertasComponent,
     RegistrarImplementoComponent,
     EditarImplementoComponent,
+    EditarPrestamoComponent,
   ],
   imports: [
     BrowserModule,

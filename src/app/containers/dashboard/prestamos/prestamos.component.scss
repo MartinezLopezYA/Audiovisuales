@@ -73,6 +73,7 @@
 .data table tr td {
     text-align: center;
     border: 1px solid #00000042;
+    cursor: pointer;
 }
 
 .data-acciones {
@@ -110,6 +111,15 @@
 }
 
 .data-acciones-crud .btn:nth-child(2) {
+    background-color: #0a5702;
+    color: #ffffff
+}
+
+.data-acciones-crud .btn:nth-child(3) {
     background-color: #E9C010;
     color: #ffffff
 }
+
+.selected-row {
+    background-color: yellow;
+}  

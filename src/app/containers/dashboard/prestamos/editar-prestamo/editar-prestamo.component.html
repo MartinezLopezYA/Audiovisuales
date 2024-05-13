@@ -6,6 +6,10 @@
         <form [formGroup]="myForm" class="form-container">
             <div class="inputs">
                 <div class="form-container-group">
+                    <div class="form-group" style="display: none;">
+                        <label class="form-label" for="fecha">Código:</label>
+                        <input formControlName="idPrestamo" type="number" id="fecha" class="form-control form-control-sm">
+                    </div>
                     <div class="form-group">
                         <label class="form-label" for="fecha">Fecha Prestamo:</label>
                         <input formControlName="fecha" type="date" id="fecha" class="form-control form-control-sm">
@@ -85,7 +89,7 @@
             </div>
             <div class="acciones">
                 <div class="form-container-group col-12">
-                    <button class="btn col-3" (click)="savePrestamo()">REGISTRAR</button>
+                    <button class="btn col-3" (click)="updatePrestamo()">ACTUALIZAR</button>
                     <button type="button" class="btn col-3" (click)="volver()">CANCELAR Y VOLVER</button>
                 </div>
             </div>

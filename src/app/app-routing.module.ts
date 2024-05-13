@@ -10,6 +10,7 @@ import { RegistrarDocenteComponent } from './containers/dashboard/docente/regist
 import { EditarDocenteComponent } from './containers/dashboard/docente/editar-docente/editar-docente.component';
 import { RegistrarImplementoComponent } from './containers/dashboard/implementos/registrar-implemento/registrar-implemento.component';
 import { EditarImplementoComponent } from './containers/dashboard/implementos/editar-implemento/editar-implemento.component';
+import { EditarPrestamoComponent } from './containers/dashboard/prestamos/editar-prestamo/editar-prestamo.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'prestamos', component: PrestamosComponent, 
       children: [
         { path: 'registrar-prestamo', component: RegistrarPrestamoComponent },
+        { path: 'editar-prestamo', component: EditarPrestamoComponent },
       ] },
       { path: 'docente', component: DocenteComponent ,
         children: [

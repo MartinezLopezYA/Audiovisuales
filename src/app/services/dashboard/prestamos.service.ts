@@ -34,4 +34,14 @@ export class PrestamosService {
     };
     return this.http.post<Prestamos>(this.url + '/prestamo', prestamo , httpOptions);
   }
+
+  deletePrestamo(id: number): Observable<any>{
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+      }
+    };
+    return this.http.delete<any>(this.url + `/prestamo?q=${id}`, httpOptions);
+  }
 }
